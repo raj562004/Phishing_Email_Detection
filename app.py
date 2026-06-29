@@ -14,7 +14,7 @@
 # # CONFIG
 # # ==============================
 
-# GOOGLE_API_KEY = "AIzaSyD6t3luyyv1bkK2CT_ZwWfmFLcVdpI5ta4"
+# GOOGLE_API_KEY = ""
 
 # # ==============================
 # # LOAD MODEL
