@@ -527,6 +527,13 @@ def get_final_prediction(
 # API
 # =====================================================
 
+@app.route("/", methods=["GET"])
+def home():
+    return jsonify({
+        "status": "Running",
+        "message": "Phishing Detection API is live"
+    })
+
 @app.route("/predict", methods=["POST"])
 def predict():
 
