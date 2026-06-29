@@ -481,40 +481,23 @@ def get_final_prediction(
     heuristic_result
 ):
     """
-    Combines all three detection layers.
+    Combines only Google Safe Browsing and ML layers.
+    Heuristics are returned separately as a behavioral audit.
     """
 
     if google_result["malicious"]:
-
         return "Phishing"
 
     if (
         ml_label == "phishing"
         and ml_confidence >= 0.70
     ):
-
         return "Phishing"
-
-    if heuristic_result["riskScore"] >= 70:
-
-        return "Phishing"
-
-    if (
-        heuristic_result["riskScore"] >= 40
-        and ml_label == "phishing"
-    ):
-
-        return "Phishing"
-
-    if heuristic_result["riskScore"] >= 40:
-
-        return "Suspicious"
 
     if (
         ml_label == "phishing"
         and ml_confidence >= 0.55
     ):
-
         return "Suspicious"
 
     return "Legitimate"
